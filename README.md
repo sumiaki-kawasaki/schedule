@@ -8,7 +8,8 @@ vscode
 開発コンテナ Node.js & Typescript 20-bookworm  
 node v20.8.0  
 npm 9.8.1  
-create-svelte@5.1.0  
+create-svelte@5.1.0
+tailwindcss
 
 参考：既存のプロジェクトに開発コンテナーを追加する https://learn.microsoft.com/ja-jp/training/modules/use-docker-container-dev-env-vs-code/4-exercise-add-development-container  
 
