@@ -12,8 +12,8 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: static_adapter(),
 		paths: {
-			base: production ? '/schedule' : '',
-		},
+			base: production ? '/schedule' : ''
+		}
 	},
 	process: vitePreprocess()
 };
