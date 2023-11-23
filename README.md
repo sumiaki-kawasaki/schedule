@@ -27,6 +27,14 @@ npm run dev
 npm run dev -- --open
 ```
 
+#### コミット前
+prettierでフォーマット整形してlintでコーディングルールチェックする
+```bash
+npm run format
+npm run lint
+```
+
+
 ### ビルド
 
 To create a production version of your app:
