@@ -1,5 +1,6 @@
 import static_adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+// import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 // productionの場合のみベースパスを設定する
 const production = process.env.NODE_ENV === 'production';
@@ -15,7 +16,7 @@ const config = {
 			base: production ? '/schedule' : ''
 		}
 	},
-	process: vitePreprocess()
+	preprocess: vitePreprocess()
 };
 
 export default config;
