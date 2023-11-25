@@ -1,19 +1,15 @@
 <div class="w-full">
-	<div class="flex">
-    <div class="w-96">
-      <div class="flex justify-center items-center h-12">
-        <div class="border w-4/6 h-full">
-          <div class="text-center px-0 py-0 m-auto">
-            題名
-          </div>
+	<div class="flex overflow-auto">
+    <div class="">
+      <div class="flex w-96 h-12">
+        <div class="border flex justify-center items-center w-4/6 h-full">
+          <p>題名</p>
         </div>
-        <div class="border w-2/6">
-          <div class="text-center">
-            担当者
-          </div>
+        <div class="border flex justify-center items-center w-2/6 h-full">
+          <p>担当者</p>
         </div>
       </div>
-      <div class="border">
+      <div class="border w-full">
         グリッド
       </div>
     </div>
@@ -25,5 +21,6 @@
         タスク
       </div>
     </div>
+    <div class="absolute left-96 w-2 h-full cursor-col-resize"></div>
 	</div>
 </div>
