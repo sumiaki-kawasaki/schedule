@@ -1,7 +1,8 @@
-<script lang="ts">
-	export let date: Date;
+<script>
+	/** @type {Date} */
+	export let date;
 </script>
 
-<div class="w-4 h-4">
-	{date.getDate()}
+<div class="border flex justify-center items-center w-8 h-6">
+	<p>{date.getDate()}</p>
 </div>

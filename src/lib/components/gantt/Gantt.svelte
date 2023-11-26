@@ -1,8 +1,8 @@
-<script lang="ts">
-	// import MonthColumn from './MonthColumn.svelte';
-	// const today = new Date();
-	// const beginDate = new Date(today.getFullYear(), today.getMonth(), 1);
-	// const endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+<script>
+	import MonthColumn from './MonthColumn.svelte';
+	const today = new Date();
+	const beginDate = new Date(today.getFullYear(), today.getMonth(), 1);
+	const endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 </script>
 
 <div class="w-full">
@@ -19,8 +19,8 @@
 			<div class="border w-full">グリッド</div>
 		</div>
 		<div class="w-full">
-			<div class="border h-12">
-				<!-- <MonthColumn start={beginDate} end={endDate} /> -->
+			<div class="">
+				<MonthColumn start={beginDate} end={endDate} />
 			</div>
 			<div class="border">タスク</div>
 		</div>

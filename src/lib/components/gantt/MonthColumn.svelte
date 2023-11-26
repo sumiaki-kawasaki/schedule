@@ -1,16 +1,23 @@
-<script lang="ts">
+<script>
 	import DayColumn from './DayColumn.svelte';
-	export let start: Date;
-	export let end: Date;
-	const days: Date[] = MakeDays();
 
-	function MakeDays(): Date[] {
-		let ret: Date[] = [];
+	/** @type {Date} */
+	export let start;
+	/** @type {Date} */
+	export let end;
+	/** @type {Date[]} */
+	const days = MakeDays();
+
+	/**
+	 * @return {Date[]}
+	 */
+	function MakeDays() {
+		let ret = [];
 		const workDate = new Date(start);
-		while (1) {
+		for (let i = 1; i < 32; ++i) {
 			const pushDay = new Date(workDate);
 			ret.push(pushDay);
-			if (workDate === end) {
+			if (workDate >= end) {
 				break;
 			}
 			workDate.setDate(workDate.getDate() + 1);
@@ -20,8 +27,8 @@
 </script>
 
 <div>
-	<div class="w-full">
-		{start.getFullYear()}年{start.getMonth() + 1}月
+	<div class="border flex justify-center items-center h-6">
+		<p>{start.getFullYear()}年{start.getMonth() + 1}月</p>
 	</div>
 	<div class="flex">
 		{#each days as date}
