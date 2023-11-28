@@ -6,7 +6,8 @@
 	// const between = BetweenDate.MakeMonth(new Date(2024, 1, 1));
 	const beginDate = new Date(today);
 	// const beginDate = new Date(today.getFullYear(), today.getMonth(), 1);
-	const endDate = new Date(beginDate); endDate.setDate(beginDate.getDate() + 60);
+	const endDate = new Date(beginDate);
+	endDate.setDate(beginDate.getDate() + 60);
 	const between = new BetweenDate(beginDate, endDate);
 	console.log(`Gantt:beginDate: ${beginDate}`);
 	console.log(`Gantt:endDate: ${endDate}`);

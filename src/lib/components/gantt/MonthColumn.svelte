@@ -14,9 +14,9 @@
 		// console.log(`MakeDays:start: ${between.start}`);
 		// console.log(`MakeDays:end: ${between.end}`);
 		let ret = [];
-    for (let i=new Date(between.start); i<=between.end; i.setDate(i.getDate()+1)) {
+		for (let i = new Date(between.start); i <= between.end; i.setDate(i.getDate() + 1)) {
 			ret.push(new Date(i));
-    }
+		}
 		return ret;
 	}
 </script>
