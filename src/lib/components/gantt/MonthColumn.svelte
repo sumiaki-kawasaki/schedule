@@ -1,10 +1,9 @@
 <script>
 	import DayColumn from './DayColumn.svelte';
 
-	/** @type {Date} */
-	export let start;
-	/** @type {Date} */
-	export let end;
+	/** @type {import('./BetweenDate').BetweenDate} */
+	export let between;
+
 	/** @type {Date[]} */
 	const days = MakeDays();
 
@@ -12,23 +11,19 @@
 	 * @return {Date[]}
 	 */
 	function MakeDays() {
+		// console.log(`MakeDays:start: ${between.start}`);
+		// console.log(`MakeDays:end: ${between.end}`);
 		let ret = [];
-		const workDate = new Date(start);
-		for (let i = 1; i < 32; ++i) {
-			const pushDay = new Date(workDate);
-			ret.push(pushDay);
-			if (workDate >= end) {
-				break;
-			}
-			workDate.setDate(workDate.getDate() + 1);
-		}
+    for (let i=new Date(between.start); i<=between.end; i.setDate(i.getDate()+1)) {
+			ret.push(new Date(i));
+    }
 		return ret;
 	}
 </script>
 
 <div>
 	<div class="border flex justify-center items-center h-6">
-		<p>{start.getFullYear()}年{start.getMonth() + 1}月</p>
+		<p>{between.start.getFullYear()}年{between.start.getMonth() + 1}月</p>
 	</div>
 	<div class="flex">
 		{#each days as date}

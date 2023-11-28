@@ -1,8 +1,18 @@
 <script>
+	import { BetweenDate } from './BetweenDate';
 	import MonthColumn from './MonthColumn.svelte';
 	const today = new Date();
-	const beginDate = new Date(today.getFullYear(), today.getMonth(), 1);
-	const endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+	// const between = BetweenDate.MakeMonth(today);
+	// const between = BetweenDate.MakeMonth(new Date(2024, 1, 1));
+	const beginDate = new Date(today);
+	// const beginDate = new Date(today.getFullYear(), today.getMonth(), 1);
+	const endDate = new Date(beginDate); endDate.setDate(beginDate.getDate() + 60);
+	const between = new BetweenDate(beginDate, endDate);
+	console.log(`Gantt:beginDate: ${beginDate}`);
+	console.log(`Gantt:endDate: ${endDate}`);
+
+	// /** @type {BetweenDate[]} */
+	const months = BetweenDate.MakeMonths(between);
 </script>
 
 <div class="w-full">
@@ -19,8 +29,10 @@
 			<div class="border w-full">グリッド</div>
 		</div>
 		<div class="w-full">
-			<div class="">
-				<MonthColumn start={beginDate} end={endDate} />
+			<div class="flex">
+				{#each months as between}
+					<MonthColumn {between} />
+				{/each}
 			</div>
 			<div class="border">タスク</div>
 		</div>
