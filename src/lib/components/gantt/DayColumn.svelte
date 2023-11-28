@@ -1,8 +1,10 @@
 <script>
+	import * as holyday_jp from '@holiday-jp/holiday_jp';
+
 	/** @type {Date} */
 	export let date;
 	const isSaturday = date.getDay() === 6;
-	const isHolyday = date.getDay() === 0;
+	const isHolyday = date.getDay() === 0 || holyday_jp.isHoliday(date);
 </script>
 
 <div
