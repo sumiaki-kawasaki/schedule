@@ -6,7 +6,7 @@ export class BetweenDate {
 		this.start = start;
 		this.end = end;
 		if (this.end <= this.start) {
-			this.end = new Date(this.start.getDate() + 1);
+			this.end.setDate(this.start.getDate() + 1);
 		}
 	}
 
